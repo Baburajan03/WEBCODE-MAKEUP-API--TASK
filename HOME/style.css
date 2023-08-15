@@ -134,3 +134,7 @@ li{
     font-weight: bolder;
     font-size:large;
 }
+
+.card-body{
+    width: 100%;
+}
