@@ -4,8 +4,8 @@ document.body.appendChild(container1)
 
 let row1 = document.createElement('div')
 row1.classList.add('row','m-4','white')
-row1.innerHTML = `<ul type="none" class="d-flex">
-<li class="ms-3"><a                   href="https://baburajan03.github.io/WEBCODE-MAKEUP-API-TASK/HOME/index.html"><img  class="image mt-3" src="./makeup icon.jpg" ></a></li>
+row1.innerHTML = `<ul type="none">
+<li class="ms-3"><a                   href="https://baburajan03.github.io/WEBCODE-MAKEUP-API--TASK/HOME/index.html"><img  class="image mt-3" src="./makeup icon.jpg" ></a></li>
 <li class="ms-3 mt-4"><a class="underline" href="https://baburajan03.github.io/WEBCODE-MAKEUP-API-TASK/HOME/index.html" >Home</a></li>
 <li class="ms-3 mt-4"><a class="underline" href="https://baburajan03.github.io/WEBCODE-MAKEUP-API-TASK/BRANDS/index.html">Brands</a></li>
 <li class="ms-3 mt-4"><a class="underline" href="https://baburajan03.github.io/WEBCODE-MAKEUP-API-TASK/PRODUCTS/index.html">Products</a></li>
@@ -18,10 +18,12 @@ row2.classList.add('row')
 row2.setAttribute('id','row2')
 container1.appendChild(row2)
 
+let apiUrl = 'https://makeup-api.herokuapp.com/api/v1/products.json';
+
 async function fetchdata(){
     try{
-        let response = await fetch('http://makeup-api.herokuapp.com/api/v1/products.json')
-        let data = await response.json()
+        let response = await fetch(apiUrl);
+        let data = await response.json();
         return data
        
     }
@@ -31,7 +33,7 @@ async function fetchdata(){
 
 async function getdetailsbybrands(){
    
-        let getdata = await fetchdata()
+        let getdata = await fetchdata();
 
         let rows = document.getElementById('row2')
         
